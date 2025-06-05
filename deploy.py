@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import joblib
 
 class SVM:
     def __init__(self):
@@ -12,7 +11,7 @@ class SVM:
         linear_output = np.dot(X, self.w) + self.b
         return np.where(linear_output >= 0, 1, 0)
 
-params = np.load("svm_model_params.npz")
+params = np.load("svm_params.npz")
 model = SVM()
 model.w = params["w"]
 model.b = params["b"]
